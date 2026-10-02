@@ -1,21 +1,20 @@
 # API
 
-All responses use `{ ok, data, error }`.
+Все ответы API имеют формат `{ ok, data, error }`. API требует PHP и MySQL на отдельном хостинге.
 
-## Public
-- `GET /api/index.php?action=services`
-- `GET /api/index.php?action=masters&service_id=1`
-- `GET /api/index.php?action=availability&master_id=1&service_id=1&date=YYYY-MM-DD`
-- `POST /api/index.php?action=register` — first name, last name, email, password
-- `POST /api/index.php?action=login` — email, password
-- `POST /api/index.php?action=logout`
-- `POST /api/index.php?action=booking.create` — service_id, master_id, starts_at, note
-- `GET /api/index.php?action=bookings.mine`
-- `POST /api/index.php?action=booking.cancel` — booking_id
+## Публичные методы
+- `GET /api/index.php?action=services` — список услуг.
+- `GET /api/index.php?action=masters&service_id=1` — мастера выбранной услуги.
+- `GET /api/index.php?action=availability&master_id=1&service_id=1&date=YYYY-MM-DD` — доступные интервалы.
+- `POST /api/index.php?action=register` — имя, фамилия, email, пароль.
+- `POST /api/index.php?action=login` — email и пароль.
+- `POST /api/index.php?action=logout` — завершение сессии.
+- `POST /api/index.php?action=booking.create` — услуга, мастер, начало и комментарий.
+- `GET /api/index.php?action=bookings.mine` — записи текущего пользователя.
+- `POST /api/index.php?action=booking.cancel` — отмена своей записи.
 
-## Admin
-Admin bearer token required in `Authorization: Bearer ...`.
+## Администратор
+Для административных методов нужен bearer-токен администратора:
 - `GET /api/index.php?action=admin.bookings`
-- `POST /api/index.php?action=admin.booking.status`
 
-Passwords and tokens are never returned by the API.
+Пароли и токены никогда не возвращаются API.

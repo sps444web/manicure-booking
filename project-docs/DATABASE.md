@@ -1,16 +1,16 @@
-# Database
+# База данных
 
-The schema is designed around interval bookings. A booking stores `starts_at` and `ends_at`; availability is checked for overlapping active bookings inside a transaction.
+Схема рассчитана на бронирование интервалов. Запись хранит `starts_at` и `ends_at`, а доступность проверяется с учётом длительности услуги и пересечений.
 
-## Core tables
-- `users`: customers and staff roles
-- `sessions`: hashed bearer sessions
-- `services`: price and duration
-- `masters`: staff profiles
-- `master_services`: services a master can perform
-- `working_hours`: weekly schedule
-- `days_off`: exceptions and closures
-- `bookings`: appointment intervals and statuses
-- `booking_events`: outbound notification event log
+## Основные таблицы
+- `users` — клиенты и сотрудники;
+- `sessions` — хешированные сессии;
+- `services` — услуги, цены и длительность;
+- `masters` — профили мастеров;
+- `master_services` — услуги, которые выполняет мастер;
+- `working_hours` — еженедельный график;
+- `days_off` — выходные и исключения;
+- `bookings` — записи и их статусы;
+- `booking_events` — журнал событий для уведомлений.
 
-Import `schema.sql` for the initial MVP schema.
+Для первоначальной установки импортируйте `../database/schema.sql`.

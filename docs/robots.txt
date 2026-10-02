@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sps444web.github.io/manicure-booking/sitemap.xml
