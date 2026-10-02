@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Запись в студию</title><meta name="description" content="Онлайн-запись на услуги студии маникюра."><link rel="stylesheet" href="/assets/app.css">
+</head>
+<body>
+<header class="site-header"><a class="brand" href="/">Студия маникюра</a><nav><a href="#services">Услуги</a><a href="#booking">Запись</a><button class="button button-ghost" data-open-auth>Войти</button></nav></header>
+<main>
+<section class="hero"><div><p class="eyebrow">Онлайн-запись</p><h1>Время для ухода, которое удобно вам.</h1><p class="lead">Выберите услугу, мастера и свободное время. Данные на этой странице являются нейтральными и готовы к настройке под ваш бренд.</p><a class="button" href="#booking">Выбрать время</a></div><div class="hero-card"><span>01</span><strong>Выберите услугу</strong><span>02</span><strong>Подберите мастера</strong><span>03</span><strong>Подтвердите запись</strong></div></section>
+<section id="services" class="section"><div class="section-heading"><p class="eyebrow">Каталог</p><h2>Услуги</h2></div><div id="services-list" class="grid"></div></section>
+<section id="booking" class="section booking-section"><div class="section-heading"><p class="eyebrow">Свободное время</p><h2>Записаться онлайн</h2></div><form id="booking-form" class="booking-form"><label>Услуга<select id="service" required></select></label><label>Мастер<select id="master" required disabled></select></label><label>Дата<input id="date" type="date" required></label><label>Время<select id="time" required disabled><option value="">Сначала выберите дату</option></select></label><label class="wide">Комментарий<textarea id="note" rows="3" placeholder="Необязательно"></textarea></label><button class="button wide" type="submit">Продолжить</button><p id="booking-message" class="form-message" role="status"></p></form></section>
+<section id="account" class="section account-section"><div class="section-heading"><p class="eyebrow">Личный кабинет</p><h2>Ваши записи</h2></div><div id="account-content"><p class="muted">Войдите, чтобы видеть записи и управлять ими.</p><button class="button button-outline" data-open-auth>Войти или зарегистрироваться</button></div></section>
+</main><footer class="footer"><span>Студия маникюра</span><span>Нейтральный шаблон проекта</span></footer>
+<dialog id="auth-dialog"><form method="dialog" id="auth-form"><button class="dialog-close" value="cancel" aria-label="Закрыть">×</button><p class="eyebrow">Кабинет</p><h2 id="auth-title">Войти</h2><div id="register-fields" hidden><label>Имя<input id="first-name"></label><label>Фамилия<input id="last-name"></label></div><label>Email<input id="email" type="email" required></label><label>Пароль<input id="password" type="password" minlength="8" required></label><button class="button" type="submit">Продолжить</button><button class="text-button" type="button" id="toggle-auth">Нет аккаунта? Зарегистрироваться</button><p id="auth-message" class="form-message" role="status"></p></form></dialog>
+<script src="/assets/app.js" defer></script></body></html>
